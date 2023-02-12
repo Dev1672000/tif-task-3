@@ -23,7 +23,7 @@ const JobDetailsForm: React.FC<{
         jobPosition: Yup.string().required("Job position is required"),
       }),
       onSubmit: (values) => {
-        console.log({ values });
+        console.log(values)
         handleTab(2);
       },
     });
@@ -65,7 +65,7 @@ const JobDetailsForm: React.FC<{
           <Button colorScheme="gray" type="button" onClick={() => handleTab(0)}>
             Previous
           </Button>
-          <Button colorScheme="red" type="submit">
+          <Button colorScheme="red" type="submit" onClick={() => handleTab(2)}>
             Next
           </Button>
         </Flex>

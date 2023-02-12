@@ -2,13 +2,14 @@ import { Button, Flex, Box } from "@chakra-ui/react";
 import React from "react";
 import FormInput from "../../components/formComponents/FormInput";
 import FormSelect from "../../components/formComponents/FormSelect";
-import { useFormik } from "formik";
+import { useFormik ,useField} from "formik";
 import * as Yup from "yup";
 import { PageNumbers } from "../../interface/home";
 import { IRequisitionDetails } from "../../interface/forms";
 import { genderOptions, urgencyOptions } from "./constants";
 
 const RequisitionDetailsForm: React.FC<{
+  
   handleTab: (n: PageNumbers) => void;
 }> = ({ handleTab }) => {
   const {
@@ -28,6 +29,7 @@ const RequisitionDetailsForm: React.FC<{
       urgency: "",
       gender: "",
     },
+   
     validationSchema: Yup.object().shape({
       requisitionTitle: Yup.string().required("Requisition title is required"),
       noOfOpenings: Yup.number()
@@ -39,6 +41,7 @@ const RequisitionDetailsForm: React.FC<{
       gender: Yup.string().required("Gender is required"),
     }),
     onSubmit: (values) => {
+      console.log(values)
       handleTab(1);
     },
   });

@@ -27,7 +27,7 @@ const InterviewDetailsForm: React.FC<{
       interviewLanguage: "",
     },
     onSubmit: (values) => {
-      console.log({ values });
+      console.log(values);
       alert("Form successfully submitted");
     },
   });
