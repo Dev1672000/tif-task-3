@@ -14,7 +14,7 @@ const JobDetailsForm: React.FC<{
       initialValues: {
         jobTitle: "",
         jobDetails: "",
-        jobLocation: "",
+        jobLocation: ""
       },
       validationSchema: Yup.object().shape({
         jobTitle: Yup.string().required("Job Title is required"),
@@ -23,7 +23,7 @@ const JobDetailsForm: React.FC<{
         jobPosition: Yup.string().required("Job position is required"),
       }),
       onSubmit: (values) => {
-        console.log(values)
+        console.log("values",values?.jobTitle)
         handleTab(2);
       },
     });
@@ -37,7 +37,7 @@ const JobDetailsForm: React.FC<{
           name="jobTitle"
           onChange={handleChange}
           onBlur={handleBlur}
-          value={values?.jobTitle}
+          value={values.jobDetails}
           error={errors?.jobTitle}
           touched={touched?.jobTitle}
         />

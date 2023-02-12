@@ -13,6 +13,7 @@ import {
   urgencyOptions,
 } from "./constants";
 
+
 const DataCard: React.FC<{ title: string; children: React.ReactNode }> = ({
   title,
   children,
@@ -50,6 +51,7 @@ const PreviewCard: React.FC<{
   jobDetails?: IJobDetails;
   interviewSettings?: IInterViewSettings;
 }> = ({ requisitionDetails, jobDetails, interviewSettings }) => {
+  // console.log("hello",interviewLanguageOptions[1].label)
   return (
     <Box p="1rem">
       <Box borderRadius="10px" bgColor="gray.100" height="fit-content">
@@ -98,8 +100,9 @@ const PreviewCard: React.FC<{
             <KeyValue
               title="Urgency"
               value={
-                urgencyOptions.find(
-                  (item) => item?.value === requisitionDetails?.urgency
+                urgencyOptions.find
+                (
+                  (item) => item?.value
                 )?.label
               }
             />
@@ -107,7 +110,7 @@ const PreviewCard: React.FC<{
               title="Gender"
               value={
                 genderOptions.find(
-                  (item) => item?.value === requisitionDetails?.gender
+                  (item) => item?.value
                 )?.label
               }
             />
@@ -122,7 +125,7 @@ const PreviewCard: React.FC<{
               title="Interview Duration"
               value={
                 interviewDurationOptions.find(
-                  (item) => item?.value === interviewSettings?.interviewDuration
+                  (item) => item?.value
                 )?.label
               }
             />
@@ -130,7 +133,7 @@ const PreviewCard: React.FC<{
               title="Interview Language"
               value={
                 interviewLanguageOptions.find(
-                  (item) => item?.value === interviewSettings?.interviewLanguage
+                  (item) => item?.value
                 )?.label
               }
             />
@@ -138,7 +141,7 @@ const PreviewCard: React.FC<{
               title="Interview Mode"
               value={
                 interviewModeOptions.find(
-                  (item) => item?.value === interviewSettings?.interviewMode
+                  (item) => item?.value 
                 )?.label
               }
             />
